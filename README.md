@@ -13,9 +13,8 @@ Run `npm run dev`. The project will run at http://localhost:3000/app
 Simply navigate to https://issue-picker.vercel.app/
 
 
-TODO: 
----> Unit testing:
-    - Test that input boxes and button appear intially, but no table
-    - Test that table appears when there are issues retrieved from the API
-    - Test that a message about there being no issues appears when this is the case
-    - Test that the react query query 
+TODO - UNIT TESTING
+    1. Test that input boxes and button appear intially, but no table
+    2. Test that table appears when there are issues retrieved from the API
+    3. Test that a message about there being no issues appears when this is the case
+    4. Test that the react query query 
