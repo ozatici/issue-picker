@@ -3,13 +3,19 @@ import React, { useEffect, useState } from "react";
 import IntersectionObserverWrapper from "../util/IntersecctionObserverWrapper";
 import styles from '../styles/table.module.scss';
 
-const Table = ({ org, repo }) => {
-  const [issueList, setIssueList] = useState([]);
+interface Issue {
+  status?: string,
+  title?: string,
+  author?: string;
+  formattedDate?: string;
+}
+
+const Table = ({ org, repo }: { org: string, repo: string }) => {
+  const [issueList, setIssueList] = useState<Issue[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   let { data, fetchNextPage, isLoading } = useGetGithubIssues(org, repo);
 
   const headers = ['Status', 'Title', 'Opened by', 'Date'];
-
 
   useEffect(() => {
     setIssueList([]);
@@ -23,7 +29,7 @@ const Table = ({ org, repo }) => {
     formatData();
   }, [data, fetchNextPage]);
 
-  const formatDate = (issueDate) => {
+  const formatDate = (issueDate: string) => {
     const date = new Date(issueDate);
     return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear() % 100}`
   }
@@ -32,10 +38,10 @@ const Table = ({ org, repo }) => {
     if (Array.isArray(data?.pages[data?.pages.length - 1])) {
       if (isNewDataSet) setIssueList([]);
 
-      const itemList = [];
+      const itemList: Issue[] = [];
 
-      data?.pages[data?.pages.length - 1]?.forEach((issue) => {
-        const item = {
+      data?.pages[data?.pages.length - 1]?.forEach((issue: { state: string; title: string; user: { login: string; }; created_at: string; }) => {
+        const item: Issue = {
           status: issue.state,
           title: issue.title,
           author: issue.user.login,
@@ -48,6 +54,8 @@ const Table = ({ org, repo }) => {
 
     }
   }
+  const fetchEntries = fetchNextPage;
+
 
   return (
     <>
@@ -68,7 +76,7 @@ const Table = ({ org, repo }) => {
                 </tr>
               ))}
             </tbody>
-          </table><IntersectionObserverWrapper fetchEntries={fetchNextPage} /></>}
+          </table><IntersectionObserverWrapper fetchEntries={fetchEntries} /></>}
       </div >
       }</>
   );

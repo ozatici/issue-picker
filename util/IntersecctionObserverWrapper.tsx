@@ -1,7 +1,14 @@
+import { FetchNextPageOptions, InfiniteQueryObserverResult, InfiniteData } from "@tanstack/react-query";
 import React from "react";
 import { useRef, useEffect } from "react";
 
-const IntersectionObserverWrapper = ({ fetchEntries }) => {
+type FetchEntriesType = (options?: FetchNextPageOptions | undefined) => Promise<InfiniteQueryObserverResult<InfiniteData<any, unknown>, Error>>;
+
+interface IntersectionObserverProps {
+    fetchEntries: FetchEntriesType;
+}
+
+const IntersectionObserverWrapper: React.FC<IntersectionObserverProps> = ({ fetchEntries }) => {
     const endRef = useRef(null);
 
     useEffect(() => {
