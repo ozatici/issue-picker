@@ -9,6 +9,9 @@ Run `npm i` to install node modules
 ## To run
 Run `npm run dev`. The project will run at http://localhost:3000/app
 
+## To view without running
+Simply navigate to https://issue-picker.vercel.app/
+
 
 TODO: 
 ---> Unit testing:
