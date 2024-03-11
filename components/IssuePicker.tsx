@@ -27,20 +27,20 @@ const IssuePicker = () => {
                 <div className="mx-auto px-6">
                     <h1 className="text-4xl text-white font-bold mb-6">
                         Github issue picker <br className="hidden md:block" />
-                        <span className="text-indigo-500 bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 bg-[length:100%_4px] bg-no-repeat bg-bottom">by sarah ozatici</span>
+                        <span className="text-indigo-500 bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 bg-[length:100%_4px] bg-no-repeat bg-bottom">by Sarah Ozatici</span>
                     </h1>
-                    <h4 className="text-white font-bold mb-6">search by organization and repository to see all open issues</h4>
+                    <h4 className="text-white font-bold mb-2">Search by organization and repository to see all open issues</h4>
                     <form onSubmit={handleSubmit(onSubmit)} >
                         <div className="flex-wrap">
                             <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                                 <input
-                                    className={`w-full sm:w-1/2 rounded-md border ${formErrors.org ? 'border-red-500' : 'border-gray-300'} bg-white py-2 pl-3 pr-3 leading-4 placeholder-gray-500`}
+                                    className={`w-full sm:w-1/2 rounded-md border ${formErrors.org ? 'border-red-500' : 'border-gray-300'} bg-white py-2 pl-3 pr-3 leading-4 placeholder-gray-500 text-xs`}
                                     {...register('org', { required: true })}
                                     id="org"
                                     placeholder="Organization*"
                                 />
                                 <input
-                                    className={`w-full sm:w-1/2 rounded-md border ${formErrors.repo ? 'border-red-500' : 'border-gray-300'} bg-white py-2 pl-3 pr-3 leading-4 placeholder-gray-500`}
+                                    className={`w-full sm:w-1/2 rounded-md border ${formErrors.repo ? 'border-red-500' : 'border-gray-300'} bg-white py-2 pl-3 pr-3 leading-4 placeholder-gray-500 text-xs`}
                                     {...register('repo', { required: true })}
                                     id="repo"
                                     placeholder="Repository*"
