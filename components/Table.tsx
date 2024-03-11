@@ -40,7 +40,7 @@ const Table = ({ org, repo }: { org: string, repo: string }) => {
   return (
     <>
       {isLoading ? <LoadingMessage /> : <div>
-        {issueList.length == 0 ? <h4 className="font-bold mb-6 mt-6 text-indigo-500 mx-6"> No issues! 🥳</h4> :
+        {issueList.length == 0 ? <h4 className="font-bold text-6xl mb-6 mt-6 text-indigo-500 text-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500  mx-6"> No issues! 🥳</h4> :
           <div className="shadow-lg rounded-lg overflow-x-auto mx-4">
             <table className="w-full">
               <tbody>
