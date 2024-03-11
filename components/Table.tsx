@@ -41,7 +41,7 @@ const Table = ({ org, repo }: { org: string, repo: string }) => {
     <>
       {isLoading ? <LoadingMessage /> : <div>
         {issueList.length == 0 ? <h4 className="font-bold mb-6 mt-6 text-indigo-500 mx-6"> No issues! 🥳</h4> :
-          <div className="shadow-lg rounded-lg overflow-hidden mx-4">
+          <div className="shadow-lg rounded-lg overflow-x-auto mx-4">
             <table className="w-full">
               <tbody>
                 <tr className="bg-gray-100">
