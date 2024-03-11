@@ -46,7 +46,7 @@ const Table = ({ org, repo }: { org: string, repo: string }) => {
               <tbody>
                 <tr className="bg-gray-100">
                   {headers.map((header, index) => (
-                    <th key={index} className="w-1/4 py-4 px-6 text-left text-gray-600 font-bold uppercase">{header}</th>
+                    <th key={index} className="py-4 px-6 text-left text-gray-600 font-bold uppercase">{header}</th>
                   ))}
                 </tr>
                 {issueList.map((issue, index) => (

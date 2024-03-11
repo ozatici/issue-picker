@@ -32,11 +32,11 @@ const IssuePicker = () => {
                     <h4 className="text-white font-bold mb-6">search by organization and repository to see all open issues</h4>
                     <form onSubmit={handleSubmit(onSubmit)} >
                         <div className="flex flex-wrap">
-                            <input className={`inline w-50 rounded-md border mb-4 ${formErrors.org ? 'border-red-500' : 'border-gray-300'
+                            <input className={`inline w-50 rounded-md border ${formErrors.org ? 'border-red-500' : 'border-gray-300'
                                 } bg-white py-2 pl-3 pr-3 leading-4 placeholder-gray-500 mr-2`} {...register('org', { required: true })} id="org" placeholder="Organization*" />
                             <input className={`inline w-50 rounded-md border ${formErrors.repo ? 'border-red-500' : 'border-gray-300'
                                 } bg-white py-2 pl-3 pr-3 leading-4 placeholder-gray-500 mr-2`} {...register('repo', { required: true })} id="repo" placeholder="Repository*" />
-                            <button className="bg-indigo-600 ounded-md px-4 py-2 font-medium text-white ml-4">Search</button>
+                            <button className="bg-indigo-600 rounded-md px-4 py-2 font-medium text-white ml-4">Search</button>
                         </div>
                     </form>
                 </div>
